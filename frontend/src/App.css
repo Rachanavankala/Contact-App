@@ -1,0 +1,197 @@
+/* src/App.css */
+
+/* 1. Color Palette & Root Variables */
+:root {
+  --navy: #0a192f;
+  --light-navy: #112240;
+  --lightest-navy: #233554;
+  --slate: #8892b0;
+  --light-slate: #a8b2d1;
+  --lightest-slate: #ccd6f6;
+  --white: #e6f1ff;
+  --accent: #64ffda; /* Cyan/Mint Green */
+  --accent-tint: rgba(100, 255, 218, 0.1);
+  --error-red: #e57373;
+  --success-green: #81c784;
+}
+
+/* 2. Global Styles & Typography */
+body {
+  margin: 0;
+  background-color: var(--navy);
+  color: var(--light-slate);
+  font-family: 'Calibri', 'Segoe UI', 'Roboto', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.app-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 25px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+header h1 {
+  color: var(--lightest-slate);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+header p {
+  color: var(--slate);
+  font-size: 1.1rem;
+}
+
+h2 {
+  color: var(--lightest-slate);
+  margin-bottom: 20px;
+}
+
+.card {
+  background-color: var(--light-navy);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+  margin-bottom: 40px;
+}
+
+/* 3. Form Styles */
+.form-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  background-color: var(--lightest-navy);
+  border: 1px solid var(--lightest-navy);
+  border-radius: 4px;
+  color: var(--lightest-slate);
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input::placeholder {
+  color: var(--slate);
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-tint);
+}
+
+.form-actions {
+  margin-top: 10px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.25s ease;
+  margin-right: 10px;
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  color: var(--navy);
+  border: 1px solid var(--accent);
+}
+.btn-primary:hover {
+  background-color: var(--accent-tint);
+  color: var(--accent);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.btn-secondary:hover {
+  background-color: var(--accent-tint);
+}
+
+/* 4. Contact List & Card Styles */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.contact-card {
+  background-color: var(--light-navy);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+}
+
+.contact-info h3 {
+  color: var(--lightest-slate);
+  margin: 0 0 10px 0;
+}
+
+.contact-info p {
+  color: var(--slate);
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
+
+.contact-email::before { content: '📧 '; }
+.contact-phone::before { content: '📞 '; }
+.contact-address::before { content: '🏠 '; }
+
+.contact-actions {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.btn-icon {
+  background: none;
+  border: none;
+  color: var(--slate);
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  transition: color 0.3s;
+}
+
+.btn-edit:hover { color: var(--accent); }
+.btn-delete:hover { color: var(--error-red); }
+
+/* 5. Message Styles */
+.message {
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  text-align: center;
+}
+.success { background-color: rgba(129, 199, 132, 0.2); color: var(--success-green); }
+.error { background-color: rgba(229, 115, 115, 0.2); color: var(--error-red); }
+
+/* 6. Responsiveness */
+@media (max-width: 600px) {
+  .form-group { grid-template-columns: 1fr; }
+  .app-container { padding: 20px 15px; }
+  header h1 { font-size: 2rem; }
+}
