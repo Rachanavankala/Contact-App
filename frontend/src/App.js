@@ -11,7 +11,8 @@ function App() {
   const [message, setMessage] = useState('');
   const [error, setError] = useState('');
 
-  const API_URL = 'http://localhost:5000/contacts';
+  // Use the correct live URL from your Render logs
+const API_URL = 'https://contact-app-6gf3.onrender.com/contacts';
 
   useEffect(() => {
     fetchContacts();
